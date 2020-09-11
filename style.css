@@ -1,7 +1,8 @@
 body {
-  background-color: beige;
+  background-color: rgb(236, 236, 229);
+  display: grid;
+  place-items: center;
 }
 .subtitle {
-  background-color: bisque;
-  width: fit-content;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
