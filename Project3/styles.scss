@@ -363,3 +363,11 @@ footer {
   place-items: center;
   margin: 10px;
 }
+
+//floating button
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+}

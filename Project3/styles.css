@@ -381,4 +381,11 @@ footer img {
   place-items: center;
   margin: 10px;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */
