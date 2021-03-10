@@ -1,0 +1,365 @@
+//Our style
+
+$black: #071011;
+$white: #fff;
+$red: #e04869;
+
+$basic-one: #b23a48;
+$basic-two: #6e252d;
+
+$standard: 10px;
+$card-height: 450px;
+$card-width: 300px;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap");
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+.navbar {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.container {
+  margin-bottom: 10%;
+}
+.welcome {
+  height: 90vh;
+  background-color: $basic-one;
+  padding: 10%;
+
+  h1 {
+    font-weight: 700;
+    color: $white;
+    font-size: 12em;
+    text-align: right;
+  }
+  h2 {
+    font-size: 3em;
+    color: $white;
+    text-align: right;
+  }
+  h5 {
+    font-size: 1.5em;
+    color: $white;
+  }
+  h3 {
+    color: $white;
+    font-size: 2.5em;
+  }
+  .welcome-image {
+    margin: auto;
+  }
+
+  .sub-text {
+    padding-bottom: -150px;
+  }
+  @media (max-width: 1250px) {
+    padding-top: 25%;
+    height: fit-content;
+    h1 {
+      font-size: 7.2em;
+    }
+  }
+}
+
+.wrap {
+  max-width: 1400px;
+  margin: auto;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background: url("https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-0.3.5&s=4222852e25e0f57d9485f7889957e99a&auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background: #ccc;
+  background-position: 0 50%;
+  background: #deb493;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+.students {
+  margin: auto;
+  max-width: 1100px;
+}
+
+.outer-div,
+.inner-div {
+  height: $card-height;
+  max-width: $card-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.outer-div {
+  perspective: 900px;
+  perspective-origin: 50% calc(50% - 18em);
+  width: 300px;
+  margin: 0 20 0 20 px;
+}
+
+.inner-div {
+  margin: $standard * 5 auto;
+
+  border-radius: 5px;
+  font-weight: 400;
+  color: $black;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  transform-style: preserve-3d;
+
+  &:hover .social-icon {
+    opacity: 1;
+    top: 0;
+  }
+
+  &:hover .front__face-photo,
+  &:hover .front__footer {
+    opacity: 0;
+  }
+}
+
+.outer-div:hover .inner-div {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: relative;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  cursor: pointer;
+  height: 100%;
+  background: $white;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.front__bkg-photo {
+  position: relative;
+  height: 150px;
+  width: $card-width;
+  background: $basic-one;
+
+  // background: url("https://stackify.com/wp-content/uploads/2018/05/The-Evolution-of-C-881x441.png")
+  //   no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: auto;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.teacher {
+  background-color: $basic-two;
+}
+
+.front__face-photo {
+  position: relative;
+  top: -100px;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid $white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  z-index: 3;
+}
+
+.front__text {
+  position: relative;
+  top: -95px;
+  margin: 0 auto;
+  font-family: "Montserrat";
+  font-size: 18px;
+  backface-visibility: hidden;
+
+  .front__text-header {
+    font-weight: 700;
+    font-size: 35px;
+  }
+
+  .sub_name {
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .front__text-para {
+    position: relative;
+    top: -5px;
+    margin-top: 25px;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+  }
+
+  .front-icons {
+    position: relative;
+    top: 0;
+    font-size: 14px;
+    margin-right: 6px;
+    color: rgb(134, 134, 134);
+  }
+
+  .front__text-hover {
+    position: relative;
+    top: 10px;
+    font-size: 10px;
+    color: $basic-one;
+    backface-visibility: hidden;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    border: 2px solid $basic-one;
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: $basic-one;
+    color: $white;
+  }
+  .front__text-hover2 {
+    position: relative;
+    top: 10px;
+    font-size: 10px;
+    color: $basic-two;
+    backface-visibility: hidden;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    border: 2px solid $basic-two;
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: $basic-two;
+    color: $white;
+  }
+}
+
+.back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-wrapper {
+  font-size: 36px;
+  h2 {
+    color: #fff;
+    padding-bottom: 0.5em;
+  }
+
+  .social-icon {
+    position: relative;
+    top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    opacity: 0;
+    color: #fff;
+    transition: all 0.4s cubic-bezier(0.3, 0.7, 0.1, 1.9);
+  }
+
+  .social-icon:nth-child(1) {
+    transition-delay: 0.6s;
+  }
+
+  .social-icon:nth-child(2) {
+    transition-delay: 0.7s;
+  }
+
+  .social-icon:nth-child(3) {
+    transition-delay: 0.8s;
+  }
+
+  .social-icon:nth-child(4) {
+    transition-delay: 0.9s;
+  }
+}
+
+.fab {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.fab:hover {
+  top: -5px;
+}
+
+.cart-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+footer {
+  background-color: rgb(194, 194, 194);
+  //height: 15vh;
+  color: white;
+  display: grid;
+  place-items: center;
+  border-top: $basic-one 8px solid;
+  img {
+    //background-image: transparent;
+    height: 60px;
+  }
+}
+.container-form {
+  display: grid;
+  place-items: center;
+}
+
+.logo-footer {
+  display: grid;
+  place-items: center;
+  margin: 10px;
+}
